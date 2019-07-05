@@ -33,10 +33,11 @@ class DB{
     {
         self::link()->real_query($sql);
 
-        if($res = DB::link()->store_result())
+        $res = DB::link()->store_result();
+        if(!DB::link()->error)
             return $res;
         else
-            echo  DB::link()->error;
+            throw new \Exception(''.DB::link()->error.' Ошибка в запросе: '.$sql);
     }
 
 

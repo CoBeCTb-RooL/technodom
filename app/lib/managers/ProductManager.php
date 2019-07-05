@@ -51,19 +51,6 @@ class ProductManager extends BaseEntityManager implements IEntityManager {
 
 
 
-
-//    public function validate($obj)
-//    {
-//        $ret = null;
-//        vd($obj->validationMeta());
-//        $problems = [];
-//        echo "!!!!!!";
-//
-//        return $ret;
-//    }
-
-
-
     #   создаёт экземпляр по имени класса
     private static function _createProductFromArray($arr=[])
     {
@@ -83,5 +70,54 @@ class ProductManager extends BaseEntityManager implements IEntityManager {
     {
         return Instanciator::initObj($obj, $arr);
     }
+
+
+
+
+
+    public function save($obj)
+    {
+        $ret = true;
+
+        $agentClass = self::agentClass();
+
+        try{
+            $ret = $agentClass::save($obj);
+        }
+        catch(\Exception $e)
+        {
+            DB::link()->rollback();
+            $ret = $e->getMessage();
+        }
+
+        return $ret;
+    }
+
+
+
+    public function copyData($oFrom, $oTo)
+    {
+        $allFields = array_keys(get_class_vars(get_class($oFrom)));
+        foreach ($allFields as $field)
+            if(property_exists(get_class($oTo), $field))
+                $oTo->$field = $oFrom->$field;
+    }
+
+
+
+    public function delete($obj)
+    {
+        $ret = true;
+        if($obj)
+        {
+            $agentClass = self::agentClass();
+            $ret = $agentClass::delete($obj);
+        }
+
+//        vd($ret);
+
+        return $ret;
+    }
+
 
 }

@@ -11,45 +11,58 @@
 <!--    <button type="button" onclick="Products.list(); ">&nbsp;</button>-->
     <div  class="container-fluid">
 
-        <div v-if="list.length>0">
-            <div v-if="!firstLoad">
-                Товаров: <b>{{list.length}}</b>
-                <table  class="table table-hover ">
-                    <thead>
-                    <tr>
-                        <th style="max-width: 60px; "></th>
-                        <th>id</th>
-                        <th >Название</th>
-                        <th>Категория</th>
-                        <th>Цена</th>
-                        <th>SKU</th>
-                        <th style="color: #df0000; ">Удалить</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr class="item " v-for="item in list" v-on:dblclick="Products.edit(item.id)">
-                        <td >
-                            <button class="btn btn-warning btn-sm"  v-on:click="Products.edit(item.id)">ред.</button>
-                        </td>
-                        <td>{{item.id}}</td>
-                        <td>{{item.title}}</td>
-                        <td >
-                            <span v-if="item.category">{{item.category.title}} <sup>[{{item.category.code}}]</sup></span>
-                            <span v-else style="color: #888; " >-нет-</span>
-                        </td>
-                        <td>{{item.price}}</td>
-                        <td>{{item.sku}}</td>
-                        <td class="justify-center"><input type="checkbox" :name="'delete['+item.id+']'"></td>
-                    </tr>
-                    </tbody>
-                </table>
+            <div v-if="list.length>0">
+                <div v-if="!firstLoad">
+                    Товаров: <b>{{list.length}}</b>
+                    <table  class="table table-hover products-tbl">
+                        <thead>
+                        <tr>
+                            <th style="max-width: 60px; "></th>
+                            <th>id</th>
+                            <th >Название</th>
+                            <th>Категория</th>
+                            <th>Цена</th>
+                            <th>SKU</th>
+                            <th>Хар-ки</th>
+                            <th style="color: #df0000; "><label ><input type="checkbox" onclick="$('#products input[name^=delete]').prop('checked', $(this).is(':checked') ? true : false); "> Удалить </label></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr class="item " v-for="item in list" v-on:dblclick="Products.edit(item.id)">
+                            <td >
+                                <button class="btn btn-warning btn-sm"  v-on:click="Products.edit(item.id)">ред.</button>
+                            </td>
+                            <td>{{item.id}}</td>
+                            <td>{{item.title}}</td>
+                            <td >
+                                <span v-if="item.category">{{item.category.title}} <sup>[{{item.category.code}}]</sup></span>
+                                <span v-else style="color: #888; " >-нет-</span>
+                            </td>
+                            <td>{{item.price}}</td>
+                            <td>{{item.sku}}</td>
+                            <td class="props">
+                                <div v-for="prop in item.props">
+                                    <b>{{prop.title}}</b>: {{item[prop.code]}}{{prop.unit}}
+                                </div>
+                            </td>
+                            <td class="justify-center"><input type="checkbox" :name="'delete['+item.id+']'" :productId="item.id" ></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div v-else>Товаров нет.</div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <button class="btn btn-success" type="button" onclick="Products.edit(); ">+ добавить</button>
+                <button class="btn btn-danger float-sm-right" type="button" onclick="Products.deleteSelected(); ">удалить выбранные</button>
             </div>
         </div>
-        <div v-else>Товаров нет.</div>
 
     </div>
 
-    <button class="btn btn-success" type="button" onclick="Products.edit(); ">+ добавить</button>
+
 
 </div>
 
@@ -62,7 +75,7 @@
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" >Modal title</h5>
+                <h5 class="modal-title" ><b>Modal title</b> <img src="public/assets/images/preloader.gif" class="loading" width="24" alt="" style="display: none; "></h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>

@@ -21,7 +21,10 @@ class productsController{
         {
             $cats = CategoryManager::getList();
             foreach ($list as $item)
+            {
                 $item->initCategory($cats);
+                $item->initProps();
+            }
         }
 
 //        $list[1]->category = null;  // !!!!!!!!!!!!!
@@ -54,18 +57,29 @@ class productsController{
 
     public function editFormSubmit()
     {
+//        usleep(100000);
         $ret = [
             'result'=>'fail',
             'problems' => [],
+            'error' => null,
         ];
 
         if($id = $_REQUEST['id'])
-            $obj = ProductManager::get($id);
+        {
+            #   при смене типа, меняется и класс товара. Переносим данные из старого класса в новый
+            $oldObj = ProductManager::get($id);     //  старый объект
+            $obj = ProductFactory::create($_REQUEST['categoryId']);     //  новый
+            ProductManager::copyData($oldObj, $obj);
+//            die();
+        }
         else
             $obj = ProductFactory::create($_REQUEST['categoryId']);  //  если catId не выбран - не беда, создастся
                                                                 //  родительский класс, и сработает его валидация
         #   раскладываем данные
         ProductManager::setValuesFromArray($obj, $_REQUEST);
+
+//        vd($obj->validate());
+
         if(($result = $obj->validate()) !== true)
         {
             $ret['result'] = 'fail';
@@ -73,14 +87,46 @@ class productsController{
         }
         else
         {
-            $ret['result'] = 'ok';
             #   сохраняем
-
+            $res = ProductManager::save($obj);
+            if($res === true)
+                $ret['result'] = 'ok';
+            else
+                $ret['error'] = $res;
         }
+
+//        $a = \App\Lib\SimpleValidator::validateField('123sdf123sdf', 'float');
+//        vd($a);
+//        vd(filter_var('1231s2312', FILTER_VALIDATE_FLOAT)!==false);
 
         return $ret;
     }
 
+
+
+
+
+    public function deleteByIds()
+    {
+        $ret = [
+            'result'=>'ok',
+            'warnings' => [],
+            'errors' => [],
+        ];
+        foreach ($_REQUEST['ids'] as $id)
+        {
+            $prod = ProductManager::get($id, $withProps=false);
+            if($prod)
+            {
+                $res = ProductManager::delete($prod);
+                if($res !== true)
+                    $ret['errors'][] = $res;
+            }
+            else
+                $ret['warnings'][] = 'Товар '.$id.' не существует..';
+        }
+        return $ret;
+    }
 
 
 

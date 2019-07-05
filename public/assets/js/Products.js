@@ -17,7 +17,7 @@ var Products = {
     edit: function(id){
         id = id || null
         this.currentProductId = id
-        $('#editModal .modal-title').html(id ? 'Редактирование товара' : 'Добавление товара')
+        $('#editModal .modal-title b').html(id ? 'Редактирование товара' : 'Добавление товара')
 
         $('#editModal').modal({})
 
@@ -52,6 +52,7 @@ var Products = {
 
 
     editSubmit: function(){
+
         // var form = $('#editFormWrapper')
         // $.each($(form).find('input:visible, select:visible'), function(k, v){
         //     alert($(v).attr('name')+' = '+$(v).val())
@@ -60,17 +61,21 @@ var Products = {
             url: '/products/editFormSubmit',
             // data: vueEditFormApp.item,
             data: $('#editFormWrapper').serialize(),
-            dataType: '',
-            beforeSend: function(){app.loading = true;  },
-            complete: function(){  app.loading = false;  },
+            dataType: 'json',
+            beforeSend: function(){$('#editModal .loading').show(); Products.cleanProblems()  },
+            complete: function(){  $('#editModal .loading').hide();  },
             success: function(data){
                 if(data.result == 'ok'){
-                    alert('ok!')
+                    toastr.success('Сохранено!')
+                    $('#editModal').modal('hide')
+                    Products.list();
                 }
-                else
+                else{
                     Products.showProblems(data.problems)
+                    toastr.error(data.error || 'Необходимо заполнить все поля корректно!')
+                }
             },
-            error: function(){},
+            error: function(){toastr.error('Возникла ошибка на сервере.. Обратитесь к разработчику')},
         })
     },
 
@@ -91,8 +96,42 @@ var Products = {
     },
     cleanProblems: function(){
         var form = $('#editFormWrapper')
-        $(form).find('input[name=' + v.field + '], select[name=' + v.field + ']').removeClass('is-invalid')
-        $(form).find('input[name=' + v.field + '], select[name=' + v.field + ']').parent().find('.error-label').html(v.msg).slideUp('fast')
+        $(form).find('input, select').removeClass('is-invalid')
+        $(form).find('input, select').parent().find('.error-label').slideUp('fast')
+    },
+
+
+    deleteSelected: function(){
+        var $checked = $('#products input[name^=delete]:checked')
+        if($checked.length){
+            var data = []
+            $.each($checked, function(k, v){
+                data.push($(v).attr('productId'))
+            })
+
+            $.ajax({
+                url: '/products/deleteByIds',
+                data: {ids: data},
+                dataType: 'json',
+                beforeSend: function(){ app.loading = true;  $('#products .container-fluid').css('opacity', .4);},
+                complete: function(){  app.loading=false; $('#products .container-fluid').css('opacity', 1); },
+                success: function(data){
+                    toastr.success('Сохранено!')
+                    if(data.errors.length > 0){
+                        for(var i in data.errors)
+                            toastr.error(data.errors[i])
+                    }
+                    if(data.warnings.length > 0){
+                        for(var i in data.warnings)
+                            toastr.warning(data.warnings[i])
+                    }
+                    if(data.result == 'ok')
+                        Products.list();
+                },
+                error: function(){toastr.error('Возникла ошибка на сервере.. Обратитесь к разработчику')},
+            })
+
+        }
     }
 
 

@@ -11,8 +11,8 @@ class DVD extends Product{
     {
         return array_merge( parent::validationMeta(), [
             'size' => [
-                'type' => 'text',
-                'errorMsg'=>'Укажите объём!',
+                'type' => 'int',
+                'errorMsg'=>'Укажите корректно объём!',
             ],
 
         ]);

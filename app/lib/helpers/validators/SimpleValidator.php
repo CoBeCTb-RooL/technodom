@@ -34,6 +34,9 @@ class SimpleValidator implements IValidator {
     public function validateField($val, $type)
     {
         $ret = false;
+
+//        vd($val);
+//        vd($type);
         switch($type)
         {
             case 'int':
@@ -43,9 +46,11 @@ class SimpleValidator implements IValidator {
                 $ret = filter_var($val, FILTER_VALIDATE_FLOAT)!==false;
                 break;
             default:
-                $ret = trim($val);
+                $ret = trim($val) ? true : false;
                 break;
         }
+//        vd($ret);
+//        echo "\n-----------------------------------------\n";
 
         return $ret;
     }
