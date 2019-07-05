@@ -13,7 +13,7 @@ $item = $MODEL['product'];
             <div class="form-group row ">
                 <label class="col-sm-3 col-form-label"><?=$prop->title?>:</label>
                 <div class="col-sm-8 pr-0">
-                    <input type="text" v-model="item.<?=$propName?>" class="form-control" name="<?=$propName?>" placeholder="<?=$prop->title?>" value="<?=$item->$propName?>">
+                    <input type="text" v-model="item.<?=$propName?>" class="form-control" name="<?=$propName?>" placeholder="<?=$prop->title?>" value="<?=htmlspecialchars($item->$propName)?>">
                     <div class="error-label"></div>
                 </div>
                 <label class="col-sm-1 col-form-label ml-0 pl-1 align-middle" ><?=$prop->unit?></label>

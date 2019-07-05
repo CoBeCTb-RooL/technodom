@@ -31,7 +31,7 @@
                                 <button class="btn btn-warning btn-sm"  v-on:click="Products.edit(item.id)">ред.</button>
                             </td>
                             <td>{{item.id}}</td>
-                            <td>{{item.title}}</td>
+                            <td >{{item.title}}</td>
                             <td >
                                 <span v-if="item.category">{{item.category.title}} <sup>[{{item.category.code}}]</sup></span>
                                 <span v-else style="color: #888; " >-нет-</span>

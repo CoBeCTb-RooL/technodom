@@ -32,22 +32,23 @@ INSERT IGNORE INTO `categories` (`id`, `title`, `code`) VALUES
 DROP TABLE IF EXISTS `products`;
 CREATE TABLE IF NOT EXISTS `products` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `title` varchar(50) DEFAULT '0',
+  `title` varchar(255) DEFAULT '0',
   `sku` varchar(50) DEFAULT '0',
   `price` decimal(10,2) DEFAULT '0.00',
   `categoryId` int(11) DEFAULT '0',
   PRIMARY KEY (`id`),
   KEY `FK_products_categories` (`categoryId`),
   CONSTRAINT `FK_products_categories` FOREIGN KEY (`categoryId`) REFERENCES `categories` (`id`) ON DELETE SET NULL ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 
--- Дамп данных таблицы technodom.products: ~4 rows (приблизительно)
+-- Дамп данных таблицы technodom.products: ~5 rows (приблизительно)
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
 INSERT IGNORE INTO `products` (`id`, `title`, `sku`, `price`, `categoryId`) VALUES
-	(1, 'группа Disturbed', 'fxv54', 12.00, 1),
+	(1, 'группа Disturbed концерт', 'fxv54', 12.00, 1),
 	(2, 'Книга "Симулякры и симуляция"', '2347345', 21.00, 2),
 	(3, 'Кожаное кресло "Потейка"', '0ыва345', 188.00, 3),
-	(4, 'Дискотека Авария - все альбомы', '16373', 19.50, 1);
+	(4, 'Дискотека Авария - все альбомы', '16373', 19.50, 1),
+	(9, '"11" e\'w\'r <script>alert(3213)</script>', '\'2\'', 21213.00, 2);
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 
 -- Дамп структуры для таблица technodom.props
@@ -100,10 +101,11 @@ CREATE TABLE IF NOT EXISTS `propvalues__cat2` (
   UNIQUE KEY `objId` (`productId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Дамп данных таблицы technodom.propvalues__cat2: ~1 rows (приблизительно)
+-- Дамп данных таблицы technodom.propvalues__cat2: ~2 rows (приблизительно)
 /*!40000 ALTER TABLE `propvalues__cat2` DISABLE KEYS */;
 INSERT IGNORE INTO `propvalues__cat2` (`productId`, `author`, `weight`) VALUES
-	(2, 'Ж. Бодрийяр', 1.5);
+	(2, 'Ж. Бодрийяр', 1.5),
+	(9, '"11" e\'w\'r <script>alert(3213)</script>', 2);
 /*!40000 ALTER TABLE `propvalues__cat2` ENABLE KEYS */;
 
 -- Дамп структуры для таблица technodom.propvalues__cat3
