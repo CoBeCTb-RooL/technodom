@@ -2,24 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="20d68b2a-41d0-41aa-be02-204f9641518c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/js/common.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/readme.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/config.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/productsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/productsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/lib/helpers/DB/DB.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/lib/helpers/DB/DB.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/lib/helpers/validators/SimpleValidator.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/lib/helpers/validators/SimpleValidator.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/lib/managers/ProductManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/lib/managers/ProductManager.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/lib/managers/PropValuesManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/lib/managers/PropValuesManager.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/lib/managers/agents/mysql/MysqlBaseManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/lib/managers/agents/mysql/MysqlBaseManager.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/lib/managers/agents/mysql/MysqlProductManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/lib/managers/agents/mysql/MysqlProductManager.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/products/DVD.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/products/DVD.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/layouts/main.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/main.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/products/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/products/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lib/core/Core.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/lib/core/Core.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lib/helpers/validators/IValidator.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/lib/helpers/validators/.IValidator.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lib/managers/IEntityManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/lib/managers/.IEntityManager.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/css/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/css/style.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/Products.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/Products.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/readme.txt" beforeDir="false" afterPath="$PROJECT_DIR$/readme.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,11 +19,71 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="147">
+              <caret line="7" selection-start-line="7" selection-end-line="7" selection-end-column="16" />
+              <folding>
+                <element signature="e#19#36#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/productsController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="387">
+              <caret line="42" selection-start-line="42" selection-end-line="42" />
+              <folding>
+                <element signature="e#6#34#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/indexController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="42">
+              <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/lib/core/Core.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="441">
+              <caret line="21" column="20" lean-forward="true" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/readme.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="366">
-              <caret line="30" column="39" lean-forward="true" selection-start-line="30" selection-start-column="39" selection-end-line="30" selection-end-column="39" />
+            <state relative-caret-position="84">
+              <caret line="4" selection-start-line="4" selection-end-line="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/lib/helpers/Instanciator.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="84">
+              <caret line="4" column="6" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/lib/core/State.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="273">
+              <caret line="48" column="70" lean-forward="true" selection-start-line="48" selection-start-column="70" selection-end-line="48" selection-end-column="70" />
             </state>
           </provider>
         </entry>
@@ -41,17 +91,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/config.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
-              <caret line="13" column="19" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/lib/managers/agents/mysql/MysqlProductManager.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-140">
-              <caret line="69" lean-forward="true" selection-start-line="69" selection-end-line="69" />
+            <state relative-caret-position="315">
+              <caret line="15" column="98" selection-start-line="15" selection-start-column="98" selection-end-line="15" selection-end-column="98" />
             </state>
           </provider>
         </entry>
@@ -70,15 +111,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="280">
               <caret line="38" column="29" selection-start-line="38" selection-start-column="29" selection-end-line="38" selection-end-column="29" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/lib/managers/BaseEntityManager.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="17" column="5" lean-forward="true" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -144,8 +176,6 @@
         <option value="$PROJECT_DIR$/app/lib/providers/ProductProvider.php" />
         <option value="$PROJECT_DIR$/app/models/Product2.php" />
         <option value="$PROJECT_DIR$/app/models/___Product.php" />
-        <option value="$PROJECT_DIR$/app/lib/core/Core.php" />
-        <option value="$PROJECT_DIR$/app/lib/core/State.php" />
         <option value="$PROJECT_DIR$/app/models/Prop.php" />
         <option value="$PROJECT_DIR$/app/lib/managers/BaseEntityManager.php" />
         <option value="$PROJECT_DIR$/app/lib/managers/IEntityManager.php" />
@@ -161,7 +191,6 @@
         <option value="$PROJECT_DIR$/app/lib/helpers/Validator.php" />
         <option value="$PROJECT_DIR$/app/lib/helpers/validators/IValodator.php" />
         <option value="$PROJECT_DIR$/app/lib/helpers/validators/IValidator.php" />
-        <option value="$PROJECT_DIR$/app/config.php" />
         <option value="$PROJECT_DIR$/app/lib/helpers/validators/ValidationProblem.php" />
         <option value="$PROJECT_DIR$/app/models/Product.php" />
         <option value="$PROJECT_DIR$/app/models/ProductFactory.php" />
@@ -170,7 +199,6 @@
         <option value="$PROJECT_DIR$/database.sql" />
         <option value="$PROJECT_DIR$/app/views/layouts/main.php" />
         <option value="$PROJECT_DIR$/app/lib/managers/agents/mysql/MysqlBaseManager.php" />
-        <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/app/lib/managers/PropValuesManager.php" />
         <option value="$PROJECT_DIR$/app/lib/helpers/DB/DB.php" />
         <option value="$PROJECT_DIR$/public/assets/css/style.scss" />
@@ -179,9 +207,13 @@
         <option value="$PROJECT_DIR$/public/assets/js/Products.js" />
         <option value="$PROJECT_DIR$/app/lib/managers/agents/mysql/MysqlProductManager.php" />
         <option value="$PROJECT_DIR$/app/views/products/index.php" />
-        <option value="$PROJECT_DIR$/app/controllers/productsController.php" />
         <option value="$PROJECT_DIR$/app/lib/helpers/validators/SimpleValidator.php" />
         <option value="$PROJECT_DIR$/app/models/products/DVD.php" />
+        <option value="$PROJECT_DIR$/app/config.php" />
+        <option value="$PROJECT_DIR$/app/lib/core/State.php" />
+        <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/app/lib/core/Core.php" />
+        <option value="$PROJECT_DIR$/app/controllers/productsController.php" />
         <option value="$PROJECT_DIR$/readme.txt" />
       </list>
     </option>
@@ -215,6 +247,12 @@
               <item name="tehnodom.local" type="b2602c69:ProjectViewProjectNode" />
               <item name="tehnodom.local" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tehnodom.local" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tehnodom.local" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="lib" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -222,7 +260,30 @@
               <item name="tehnodom.local" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tehnodom.local" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tehnodom.local" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
               <item name="helpers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tehnodom.local" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tehnodom.local" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="helpers" type="462c0819:PsiDirectoryNode" />
+              <item name="DB" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tehnodom.local" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tehnodom.local" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="helpers" type="462c0819:PsiDirectoryNode" />
+              <item name="validators" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="tehnodom.local" type="b2602c69:ProjectViewProjectNode" />
@@ -247,6 +308,15 @@
               <item name="managers" type="462c0819:PsiDirectoryNode" />
               <item name="agents" type="462c0819:PsiDirectoryNode" />
               <item name="mysql" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tehnodom.local" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tehnodom.local" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="managers" type="462c0819:PsiDirectoryNode" />
+              <item name="agents" type="462c0819:PsiDirectoryNode" />
+              <item name="other" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="tehnodom.local" type="b2602c69:ProjectViewProjectNode" />
@@ -286,11 +356,11 @@
       <recent name="D:\OSPanel\domains\tehnodom.local\app\models" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\OSPanel\domains\tehnodom.local\app\lib\managers" />
+      <recent name="D:\OSPanel\domains\tehnodom.local\app\lib\managers\interfaces" />
       <recent name="D:\OSPanel\domains\tehnodom.local" />
       <recent name="D:\OSPanel\domains\tehnodom.local\app\lib\helpers\validators" />
       <recent name="D:\OSPanel\domains\tehnodom.local\app\lib\helpers\DB" />
-      <recent name="D:\OSPanel\domains\tehnodom.local\app\models" />
-      <recent name="D:\OSPanel\domains\tehnodom.local\app\models\products" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -317,7 +387,7 @@
       <updated>1562046499975</updated>
       <workItem from="1562046501058" duration="3742000" />
       <workItem from="1562050340683" duration="7344000" />
-      <workItem from="1562059547667" duration="98994000" />
+      <workItem from="1562059547667" duration="100200000" />
     </task>
     <task id="LOCAL-00001" summary="1st commit">
       <created>1562251685902</created>
@@ -333,11 +403,18 @@
       <option name="project" value="LOCAL" />
       <updated>1562251797361</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="*upd.">
+      <created>1562315727946</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1562315727946</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="110080000" />
+    <option name="totallyTimeSpent" value="111286000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -352,7 +429,7 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49858356" visible="true" weight="0.21342282" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49858356" visible="true" weight="0.21342282" />
       <window_info id="Structure" order="1" sideWeight="0.50141644" side_tool="true" weight="0.21342282" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -384,20 +461,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="*upd." />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/lib/helpers/IQuerySketch.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="63">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/lib/helpers/MysqlQuerySketch.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
-          <caret line="1" column="22" selection-start-line="1" selection-start-column="6" selection-end-line="1" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/______CategoryMysqlDALManager.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
@@ -416,20 +479,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="399">
           <caret line="19" column="43" selection-end-line="23" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/lib/core/Core.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="12" column="9" lean-forward="true" selection-start-line="10" selection-start-column="14" selection-end-line="12" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/lib/core/State.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="51" selection-start-line="51" selection-end-line="51" />
         </state>
       </provider>
     </entry>
@@ -489,7 +538,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/lib/managers/IEntityManager.php">
+    <entry file="file://$PROJECT_DIR$/app/lib/managers/.IEntityManager.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="63">
           <caret line="3" column="10" selection-start-line="3" selection-start-column="10" selection-end-line="3" selection-end-column="10" />
@@ -524,7 +573,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/lib/helpers/validators/IValidator.php">
+    <entry file="file://$PROJECT_DIR$/app/lib/helpers/validators/.IValidator.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="6" selection-start-line="6" selection-end-line="6" />
@@ -572,16 +621,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="13" column="21" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
-          <folding>
-            <element signature="e#19#36#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/assets/css/style.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="84">
@@ -624,16 +663,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/productsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="100" lean-forward="true" selection-start-line="100" selection-end-line="100" />
-          <folding>
-            <element signature="e#6#34#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/products/DVD.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="294">
@@ -669,13 +698,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="13" column="19" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/lib/managers/agents/mysql/MysqlBaseManager.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="63">
@@ -701,13 +723,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="756">
           <caret line="36" column="30" selection-start-line="36" selection-start-column="30" selection-end-line="36" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/lib/helpers/Instanciator.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="4" column="6" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
         </state>
       </provider>
     </entry>
@@ -746,10 +761,68 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/lib/helpers/helpers.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/lib/helpers/Instanciator.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="4" column="6" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="15" column="98" selection-start-line="15" selection-start-column="98" selection-end-line="15" selection-end-column="98" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/lib/core/State.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="48" column="70" lean-forward="true" selection-start-line="48" selection-start-column="70" selection-end-line="48" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="7" selection-start-line="7" selection-end-line="7" selection-end-column="16" />
+          <folding>
+            <element signature="e#19#36#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/lib/core/Core.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="441">
+          <caret line="21" column="20" lean-forward="true" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/indexController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/productsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="387">
+          <caret line="42" selection-start-line="42" selection-end-line="42" />
+          <folding>
+            <element signature="e#6#34#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/readme.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="366">
-          <caret line="30" column="39" lean-forward="true" selection-start-line="30" selection-start-column="39" selection-end-line="30" selection-end-column="39" />
+        <state relative-caret-position="84">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
         </state>
       </provider>
     </entry>

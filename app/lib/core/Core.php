@@ -5,34 +5,31 @@ class Core
 {
     public function loadModels()
     {
-        foreach(glob("app/models/*.php") as $file){
+        $a = self::getDirContents('app/models');
+        foreach ($a as $file)
             require_once($file);
-        }
-        foreach(glob("app/models/*/*.php") as $file){
-            require_once($file);
-        }
     }
 
 
     public function loadLib()
     {
-        foreach(glob("app/lib/*.php") as $file){
+        $a = self::getDirContents('app/lib');
+        foreach ($a as $file)
             require_once($file);
-        }
-
-        foreach(glob("app/lib/*/*.php") as $file){
-            require_once($file);
-        }
-
-        foreach(glob("app/lib/*/*/*.php") as $file){
-            require_once($file);
-        }
-        foreach(glob("app/lib/*/*/*/*.php") as $file){
-            require_once($file);
-        }
-
-
-
     }
+
+
+    public function getDirContents($path)
+    {
+        $rii = new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator($path));
+
+        $files = array();
+        foreach ($rii as $file)
+            if (!$file->isDir())
+                $files[] = $file->getPathname();
+
+        return $files;
+    }
+
 
 }

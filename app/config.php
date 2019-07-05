@@ -13,7 +13,7 @@ return [
     #   менеджеры основных сущностей
     'entityManagers'=>[
         'category' => 'App\\Lib\\MysqlCategoryManager',
-//        'category' => 'App\\Lib\\HardcodeCategoryManager',
+//        'category' => 'App\\Lib\\HardcodeCategoryManager',    //  альтернативный агент категорий
         'product' => 'App\\Lib\\MysqlProductManager',
         'prop' => 'App\\Lib\\MysqlPropManager',
     ],

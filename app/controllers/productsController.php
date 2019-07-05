@@ -13,6 +13,8 @@ class productsController{
 
     public function listJson()
     {
+        usleep(100000);
+
         $ret = [];
         $list = ProductManager::getList();
 
@@ -37,6 +39,8 @@ class productsController{
 
     public function editForm()
     {
+        usleep(100000);
+
         $id = $_REQUEST['id'];
         $MODEL['item'] = $id ? ProductManager::get($id) : null;
 //        if($MODEL['item'])
@@ -57,7 +61,8 @@ class productsController{
 
     public function editFormSubmit()
     {
-//        usleep(100000);
+        usleep(100000);
+
         $ret = [
             'result'=>'fail',
             'problems' => [],
@@ -70,15 +75,12 @@ class productsController{
             $oldObj = ProductManager::get($id);     //  старый объект
             $obj = ProductFactory::create($_REQUEST['categoryId']);     //  новый
             ProductManager::copyData($oldObj, $obj);
-//            die();
         }
         else
             $obj = ProductFactory::create($_REQUEST['categoryId']);  //  если catId не выбран - не беда, создастся
-                                                                //  родительский класс, и сработает его валидация
+                                                                     //  родительский класс, и сработает его валидация
         #   раскладываем данные
         ProductManager::setValuesFromArray($obj, $_REQUEST);
-
-//        vd($obj->validate());
 
         if(($result = $obj->validate()) !== true)
         {
@@ -94,10 +96,6 @@ class productsController{
             else
                 $ret['error'] = $res;
         }
-
-//        $a = \App\Lib\SimpleValidator::validateField('123sdf123sdf', 'float');
-//        vd($a);
-//        vd(filter_var('1231s2312', FILTER_VALIDATE_FLOAT)!==false);
 
         return $ret;
     }
