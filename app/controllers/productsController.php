@@ -7,7 +7,7 @@ class productsController{
 
     public function index()
     {
-        return view('products.index', ['aaa'=>1121, ]);
+        return view('products.index');
     }
 
 
@@ -29,7 +29,6 @@ class productsController{
             }
         }
 
-//        $list[1]->category = null;  // !!!!!!!!!!!!!
         $ret['list'] = $list;
 
         return $ret;
@@ -43,8 +42,6 @@ class productsController{
 
         $id = $_REQUEST['id'];
         $MODEL['item'] = $id ? ProductManager::get($id) : null;
-//        if($MODEL['item'])
-//            $MODEL['item']->initProps();
         $MODEL['cats'] = CategoryManager::getList();
 
         return view('products.editForm', $MODEL);

@@ -40,7 +40,7 @@ var Products = {
             url: '/products/editFormPropsPartial',
             data: {catId:catId, productId: this.currentProductId},
             dataType: '',
-            beforeSend: function(){/*vueEditFormApp.item.props=[9,9,9];*/ $('#editModal .modal-body #props').html('Загрузка...'); app.loading = true;  },
+            beforeSend: function(){ $('#editModal .modal-body #props').html('Загрузка...'); app.loading = true;  },
             complete: function(){  app.loading = false;  },
             success: function(data){
                 $('#editModal .modal-body #props').html(data)
@@ -52,14 +52,8 @@ var Products = {
 
 
     editSubmit: function(){
-
-        // var form = $('#editFormWrapper')
-        // $.each($(form).find('input:visible, select:visible'), function(k, v){
-        //     alert($(v).attr('name')+' = '+$(v).val())
-        // })
         $.ajax({
             url: '/products/editFormSubmit',
-            // data: vueEditFormApp.item,
             data: $('#editFormWrapper').serialize(),
             dataType: 'json',
             beforeSend: function(){$('#editModal .loading').show(); Products.cleanProblems()  },

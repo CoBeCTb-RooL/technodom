@@ -7,8 +7,6 @@
 
 <div id="products">
     <h1>Товары <span v-if="loading"><img src="public/assets/images/preloader.gif" width="32" alt=""></span></h1>
-<!--    <p>-->
-<!--    <button type="button" onclick="Products.list(); ">&nbsp;</button>-->
     <div  class="container-fluid">
 
             <div v-if="list.length>0">
@@ -56,7 +54,7 @@
         <div class="row">
             <div class="col-sm-12">
                 <button class="btn btn-success" type="button" onclick="Products.edit(); ">+ добавить</button>
-                <button class="btn btn-danger float-sm-right" type="button" onclick="Products.deleteSelected(); ">удалить выбранные</button>
+                <button class="btn btn-danger float-sm-right" type="button" onclick="if(confirm('Вы уверены?')){Products.deleteSelected();} ">удалить выбранные</button>
             </div>
         </div>
 
@@ -113,7 +111,6 @@
 
     $(document).ready(function(){
         Products.list()
-        // app.loading = false
     })
 
 </script>

@@ -1,13 +1,7 @@
 <?php
 $item = $MODEL['item'];
 $cats = $MODEL['cats'];
-//vd($item);
-//vd($item);
-//vd($cats);
 ?>
-
-
-
 
 <form id="editFormWrapper" onsubmit="Products.editSubmit(); return false;  ">
     <input type="hidden" name="id" value="<?=$item ? $item->id : ''?>" >
@@ -50,12 +44,11 @@ $cats = $MODEL['cats'];
                     <div class="error-label"></div>
                 </div>
             </div>
-<!--            <input type="text" v-model="item.props[1]" >-->
         </div>
     </div>
     <div class="row" >
         <div class="col-sm-6" id="props">
-            <!--!!!-->
+            <!--доп.свойства-->
         </div>
     </div>
 
@@ -76,7 +69,6 @@ $cats = $MODEL['cats'];
 
     //  вешаем хэндлер, чтобы при изменении полей, маркировка проблемы исчезала
     Products.setListenersOnInputsToClearOnChange()
-
 
     <?if($item):?>
     Products.catPropsHtml(<?=$item->categoryId?>);
