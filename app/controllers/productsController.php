@@ -38,8 +38,7 @@ class productsController{
 
     public function editForm()
     {
-        usleep(100000);
-
+//        usleep(100000);
         $id = $_REQUEST['id'];
         $MODEL['item'] = $id ? ProductManager::get($id) : null;
         $MODEL['cats'] = CategoryManager::getList();

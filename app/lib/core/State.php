@@ -38,6 +38,16 @@ class State{
 
     function run()
     {
+        #   здесь необходимо разрулить с роутами
+        #   если удовлетворяющий роут не найден, то отработает по умолчанию - ПАРАМ1=контроллер, ПАРАМ2=экшн
+        require_once('app/routes/app.php');
+        if($route = Route::getRoute($this->urlRaw))
+        {
+            $this->controller = $route->controller;
+            $this->action = $route->action;
+        }
+//        vd($route);
+
         $controllerPath = 'app/controllers/'.$this->controller.'.php';
         try{
             if(file_exists($controllerPath))
@@ -49,6 +59,7 @@ class State{
                     DB::connect();      //  загружаем синглтон конфига
                     Core::loadModels(); //  подгружаем модели (рекурсивно)
                     require_once ('app/startup/common.php');    //  общие процедуры
+
                     ob_start();
                     $contentResult = call_user_func($this->controller.'::'.$this->action);
                     $this->content = $contentResult ?? ob_get_clean();
