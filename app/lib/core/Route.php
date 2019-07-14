@@ -45,13 +45,21 @@ class Route{
 
             $mask = str_replace('/', '\/', $mask);
             $mask = '/('.$mask.')/';
+
 //            vd($mask);
+            $mask = str_replace('{int}', '([0-9]+.*)', $mask);
+//            vd($mask);
+
             $matches = [];
             preg_match($mask, $url, $matches);
 //            vd($matches);
 
             if($matches!=null && count($matches))
+            {
+                global $state;
+                $state->params[0] = intval($matches[2]);
                 return $r;
+            }
         }
     }
 

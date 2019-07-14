@@ -51,6 +51,21 @@ dump($_SERVER);
     }
 
 
+
+    public function index2()
+    {
+        return 'URA!! !INDEX 222!!!!!!!!!!!!!!!';
+    }
+
+    public function index3()
+    {
+        global $state;
+        dump($state->params);
+        return 'index 3 index 3 index 3 index 3 index 3 index 3 index 3 ';
+    }
+
+
+
     public function json()
     {
         //        echo 123;
