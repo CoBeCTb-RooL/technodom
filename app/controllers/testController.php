@@ -43,7 +43,7 @@ class testController{
             ->assemble();
         vd($sql);
 
-
+dump($_SERVER);
 //        vd($_SERVER);
 
 
