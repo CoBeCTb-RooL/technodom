@@ -1,4 +1,6 @@
 <?php
+namespace Controllers;
+
 use \App\Lib\ProductManager;
 use App\Lib\CategoryManager;
 use \App\Factories\ProductFactory;

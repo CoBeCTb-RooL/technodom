@@ -1,4 +1,6 @@
 <?php
+namespace Controllers;
+
 use App\Lib\Query;
 
 class testController{

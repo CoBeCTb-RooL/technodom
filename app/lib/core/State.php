@@ -45,15 +45,19 @@ class State{
         {
             $this->controller = $route->controller;
             $this->action = $route->action;
+            $this->subdir = $route->subdir;
         }
 //        vd($route);
-
-        $controllerPath = 'app/controllers/'.$this->controller.'.php';
+//vd($this->controller);
+        $controllerPath = 'app/controllers/'.($this->subdir ? $this->subdir.'/' : '').''.$this->controller.'.php';
+//        vd($controllerPath);
         try{
             if(file_exists($controllerPath))
             {
+//                vd($controllerPath);
                 require_once ($controllerPath);
-                if(method_exists($this->controller, $this->action))
+//                vd('Controllers\\'.$this->controller.'::'.$this->action);
+                if(method_exists('Controllers\\'.$this->controller, $this->action))
                 {
                     Config::init();     //  загружаем синглтон конфига
                     DB::connect();      //  загружаем синглтон конфига
@@ -61,7 +65,7 @@ class State{
                     require_once ('app/startup/common.php');    //  общие процедуры
 
                     ob_start();
-                    $contentResult = call_user_func($this->controller.'::'.$this->action);
+                    $contentResult = call_user_func('Controllers\\'.$this->controller.'::'.$this->action);
                     $this->content = $contentResult ?? ob_get_clean();
 
                     #   если лэйаут задан - стопудово будет строка, просто выводим её

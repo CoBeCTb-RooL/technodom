@@ -8,6 +8,6 @@ Route::create('prod/{int}', 'TestController@index3');
 Route::create('qwe/rty/uio', 'TestController@index');
 
 
-
+Route::create('admin/', 'admin/IndexController@index')/*->subdir('admin')*/;
 
 ?>
