@@ -6,7 +6,7 @@ class indexController{
     public function index()
     {
 //        header('Location: /products');
-        return view('index.index', ['aaa'=>1121, ]);
+        return view('admin.index.index', ['aaa'=>1121, ]);
     }
 
 

@@ -11,6 +11,7 @@ class Route{
     public $subdir;
 
     private static $_instances;
+    private static $_urlGroups;
 
 
     public function __construct($mask, $action)
@@ -21,7 +22,8 @@ class Route{
         $this->controller = $tmp[0];
         $this->action = $tmp[1];
 
-        #  разбираемся с поддиректорией контроллеров
+        #   разбираемся с поддиректорией контроллеров
+        #   касается ТОЛЬКО КОНТРОЛЛЕРОВ - т.е. поддиректории КОНТРОЛЛЕРА
 //        vd($this->controller);
         if($pos = mb_strrpos($this->controller, '/'))
         {
@@ -90,9 +92,18 @@ class Route{
 
 
 
-    public function subdir($dir)
+
+    public function urlGroup($prefix)
     {
-        //vd($dir);
+        self::$_urlGroups[] = $prefix;
     }
+
+    public function urlGroups()
+    {
+        return self::$_urlGroups;
+    }
+
+
+
 
 }

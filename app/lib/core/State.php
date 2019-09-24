@@ -9,6 +9,7 @@ class State{
     public $urlPath;
     public $urlParts;
 
+    public $subdir;
     public $controller;
     public $action;
 
@@ -23,15 +24,37 @@ class State{
 
     public function __construct()
     {
-        $this->urlRaw = $_SERVER['REQUEST_URI'];
+        require_once('app/routes/app.php');
+
+        $requestUri = $_SERVER['REQUEST_URI'];
+
+        $this->urlRaw = $requestUri;
         $this->urlSection = explode('?', $this->urlRaw)[0];     //  без гет-параметров
 
-        $this->urlSectionParts = array_values(array_filter(explode('/', $this->urlSection)));
+        $urlSectionParts = array_values(array_filter(explode('/', $this->urlSection)));
+        $this->urlSectionParts = $urlSectionParts;
 
-        $this->controller = ($this->urlSectionParts[0] ?? 'index').'Controller';
-        $this->action = ($this->urlSectionParts[1] ?? 'index');
+        #   выясняем, не является ли первый урлсекшнПарт - группой сабдиров
+        if($subdir = $this->getCurrentUrlGroup())
+        {
+            $this->subdir = $subdir;
+            unset($urlSectionParts[0]);
+            $urlSectionParts = array_values($urlSectionParts);
+        }
+
+        $this->controller = ($urlSectionParts[0] ?? 'index').'Controller';
+        $this->action = ($urlSectionParts[1] ?? 'index');
+        dump($this);
 
         self::$_instance = &$this;  //  для статического доступа
+    }
+
+
+    public function getCurrentUrlGroup()
+    {
+        foreach (Route::urlGroups() as $groupName)
+            if($this->urlSectionParts[0] == $groupName)
+                return $groupName;
     }
 
 
@@ -40,14 +63,14 @@ class State{
     {
         #   здесь необходимо разрулить с роутами
         #   если удовлетворяющий роут не найден, то отработает по умолчанию - ПАРАМ1=контроллер, ПАРАМ2=экшн
-        require_once('app/routes/app.php');
         if($route = Route::getRoute($this->urlRaw))
         {
             $this->controller = $route->controller;
             $this->action = $route->action;
             $this->subdir = $route->subdir;
         }
-//        vd($route);
+//        dump($route);
+//        dump($this);
 //vd($this->controller);
         $controllerPath = 'app/controllers/'.($this->subdir ? $this->subdir.'/' : '').''.$this->controller.'.php';
 //        vd($controllerPath);
